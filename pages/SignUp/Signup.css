@@ -1,0 +1,77 @@
+.signUp_container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+  width: 250px;
+  height: 350px;
+  padding: 40px 30px;
+}
+
+.signUp_container img {
+  height: 51px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.joinLetter {
+  text-align: center;
+  font-size: 16px;
+  color: gray;
+}
+
+.line {
+  width: 100%;
+  border: 0.5px solid;
+  margin-bottom: 40px;
+  color: lightgray;
+}
+
+.signUp_container input {
+  border: 1px solid rgba(var(--ca6, 219, 219, 219), 1);
+  border-radius: 3px;
+  height: 30px;
+  padding: 5px;
+  font-size: 14px;
+  margin-bottom: 5px;
+  background-color: rgba(var(--b3f, 250, 250, 250), 1);
+}
+
+.signUp_container button {
+  font-size: 15px;
+  font-weight: bold;
+  height: 34px;
+  border: 0;
+  border-radius: 3px;
+  color: white;
+  background-color: #bfef88;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.join_ {
+  display: flex;
+  justify-content: center;
+  width: 309px;
+  height: 40px;
+  background-color: white;
+  border: 1px solid lightgrey;
+  margin-top: 10px;
+}
+
+.join {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.joinBtn {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: white;
+  color: #0095f6;
+  border: 0;
+  font-weight: bold;
+}
