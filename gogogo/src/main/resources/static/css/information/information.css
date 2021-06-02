@@ -12,10 +12,9 @@ a {
   text-decoration: none;
 } /* 링크에 밑줄 같은거 제거*/
 
-
 /* 제목영역안에 있는 메인 로고 이미지 위치 지정 */
 
-.title{
+.title {
   width: 110%;
   text-align: center;
 }
@@ -30,7 +29,7 @@ body {
   background-color: #c3edff;
 }
 
-#sky{
+#sky {
   width: 110%;
 }
 
@@ -52,7 +51,7 @@ body {
   font-size: 25px;
 }
 
-.badge{
+.badge {
   width: 110%;
   text-align: center;
 }
@@ -65,8 +64,6 @@ body {
 
 .badge_img {
   align-items: center;
-
-
 }
 
 #page {
@@ -74,13 +71,13 @@ body {
   margin: 0px auto;
 }
 
-.echo_bag1{
+.echo_bag1 {
   margin-left: 15px;
-  float:left;
+  float: left;
   width: 15%;
 }
-.echo_bag2{
-  float:right;
+.echo_bag2 {
+  float: right;
   width: 15%;
 }
 * footer {
@@ -91,6 +88,12 @@ body {
   left: 0;
   padding: 15px 0;
   position: flex;
+}
+
+.footer {
+  display: inline-block;
+  margin-bottom: 0;
+  margin-left: 600px;
 }
 
 #footer_box {
