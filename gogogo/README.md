@@ -1,4 +1,4 @@
-![logo](https://user-images.githubusercontent.com/66726731/120877372-20063500-c5f1-11eb-9f2c-f18a41469726.png)
+![logo](https://user-images.githubusercontent.com/66726731/120877453-95720580-c5f1-11eb-9241-ef2d3eae9f8a.png)
 # gogogo
 
 # 개요
