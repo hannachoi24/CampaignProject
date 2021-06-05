@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head th:replace="fragments/home_header :: home_header">
+    <title>Home</title>
+</head>
+
+<style>
+    body{
+    font-family: 'Sunflower', sans-serif;
+    }
+</style>
+
+<body>
+    <div id="page">
+        <div class="home_header">
+                <div class="logo_image" id="logo">
+                    <a href="/">
+                        <img src="/img/logo.png" style="width:300px" alt="Logo">
+                    </a>
+                </div>
+                <div class="home_menu">
+                    <nav>
+                        <ul class="home_ul">
+                            <!-- about.html 로 이동 -->
+                            <li><a href="/about">About</a></li>
+                            <!-- information.html 로 이동-->
+                            <li><a href="/information">우리동네정보</a></li>
+                            <!-- notice.html 로 이동-->
+                            <li><a href="/notice">NOTICE</a></li>
+
+                            <li> <a class="thyemleaf1" sec:authorize="isAuthenticated()"><span sec:authentication ="name"/>님! 오늘도 동네를위해!</a></li>
+                            <li> <a class="thyemleaf2" sec:authorize="isAnonymous()" th:href="@{/login}">LOGIN</a></li>
+                            <li> <a class="thyemleaf2" sec:authorize="isAnonymous()" th:href="@{/signup}">SIGNUP</a></li>
+                            <li> <a class="thyemleaf2" sec:authorize="isAuthenticated()" th:href="@{/logout}">LOGOUT</a></li>
+
+
+                        </ul>
+                    </nav>
+                </div>
+
+
+        </div>
+
+
+
+        <div class="data1_box" th:object="${api_airForm}">
+
+            <div class="air_text">
+                <p class="air_text_in" th:text="${api_airForm.name}"></p>
+                갱신시간 : <p th:text="${api_airForm.dataTime}"></p>
+                출처: 에어코리아
+            </div>
+
+            <div class="mini_box">
+                <p class="air_text_in">서울</p>
+                <span class="gauge" th:if="${api_airForm.seoul}>150">
+                    <p class="gauge_red" th:text="${api_airForm.seoul}"></p>
+                    <p class="danger">매우나쁨</p>
+                </span>
+                <span class="gauge" th:if="${api_airForm.seoul}<151 and ${api_airForm.seoul}>80">
+                    <p class="gauge_orange" th:text="${api_airForm.seoul}"></p>
+                    <p class="danger">나쁨</p>
+                </span>
+                <span class="gauge" th:if="${api_airForm.seoul}<81 and ${api_airForm.seoul}>30">
+                    <p class="gauge_green" th:text="${api_airForm.seoul}"></p>
+                    <p class="danger">보통</p>
+                </span>
+                <span class="gauge" th:if="${api_airForm.seoul}<31 and ${api_airForm.seoul}>0">
+                    <p class="gauge_blue" th:text="${api_airForm.seoul}"></p>
+                    <p class="danger">좋음</p>
+                </span>
+            </div>
+
+            <div class="mini_box">
+                <p class="air_text_in">부산</p>
+                <span class="gauge" th:if="${api_airForm.busan}>150">
+                    <p class="gauge_red" th:text="${api_airForm.busan}"></p>
+                    <p class="danger">매우나쁨</p>
+                </span>
+                <span class="gauge" th:if="${api_airForm.busan}<151 and ${api_airForm.busan}>80">
+                    <p class="gauge_orange" th:text="${api_airForm.busan}"></p>
+                    <p class="danger">나쁨</p>
+                </span>
+                <span class="gauge" th:if="${api_airForm.busan}<81 and ${api_airForm.busan}>30">
+                    <p class="gauge_green" th:text="${api_airForm.busan}"></p>
+                    <p class="danger">보통</p>
+                </span>
+                <span class="gauge" th:if="${api_airForm.busan}<31 and  ${api_airForm.busan}>0">
+                    <p class="gauge_blue" th:text="${api_airForm.busan}"></p>
+                    <p class="danger">좋음</p>
+                </span>
+            </div>
+
+            <div class="mini_box">
+                <p class="air_text_in">광주</p>
+                <span class="gauge" th:if="${api_airForm.gwangju}>150">
+                    <p class="gauge_red" th:text="${api_airForm.gwangju}"></p>
+                    <p class="danger">매우나쁨</p>
+                </span>
+                <span class="gauge" th:if="${api_airForm.gwangju}<151 and ${api_airForm.gwangju}>80">
+                    <p class="gauge_orange" th:text="${api_airForm.gwangju}"></p>
+                    <p class="danger">나쁨</p>
+                </span>
+                <span class="gauge" th:if="${api_airForm.gwangju}<81 and ${api_airForm.gwangju}>30">
+                    <p class="gauge_green" th:text="${api_airForm.gwangju}"></p>
+                    <p class="danger">보통</p>
+                </span>
+                <span class="gauge" th:if="${api_airForm.gwangju}<31 and ${api_airForm.gwangju}>0">
+                    <p class="gauge_blue" th:text="${api_airForm.gwangju}"></p>
+                    <p class="danger">좋음</p>
+                </span>
+            </div>
+
+            <div class="mini_box">
+                <p class="air_text_in">제주</p>
+                <span class="gauge" th:if="${api_airForm.jeju}>150">
+                    <p class="gauge_red" th:text="${api_airForm.jeju}"></p>
+                    <p class="danger">매우좋음</p>
+                </span>
+                <span class="gauge" th:if="${api_airForm.jeju}<151 and ${api_airForm.jeju}>80">
+                    <p class="gauge_orange" th:text="${api_airForm.jeju}"></p>
+                    <p class="danger">좋음</p>
+                </span>
+                <span class="gauge" th:if="${api_airForm.jeju}<81 and ${api_airForm.jeju}>30">
+                    <p class="gauge_green" th:text="${api_airForm.jeju}"></p>
+                    <p class="danger">보통</p>
+                </span>
+                <span class="gauge" th:if="${api_airForm.jeju}<31 and ${api_airForm.jeju}>0">
+                    <p class="gauge_blue" th:text="${api_airForm.jeju}"></p>
+                    <p class="danger">좋음</p>
+                </span>
+            </div>
+
+
+
+        </div>
+
+        <div class="home_main_text">
+            <h3>성격으로 알아보는</h3>
+            <h1>당신의</h1>
+            <h1>씀씀이 테스트</h1>
+        </div>
+
+        <div class="recycle_icon">
+            <img src="/img/testicon.jpg" width="300px" height="300px">
+        </div>
+        <div>
+            <button id="startButton" input type = "button" onclick= "location.href='/question/1'" >시작하기</button>
+        </div>
+
+
+        <div class="activate" sec:authorize="isAuthenticated()" th:object="${city}">
+            <div>
+                <button id="activate1" input type = "button" th:text="'먹방 꿈나무 ' + ${city.getTodo_1() +' / 10'}"
+                        onclick= "location.href='/information'" >
+                    대중교통 이용하기<img src="/img/complate.png" width="25" height="25"> </button>
+            </div>
+
+            <div>
+                <button id="activate2" input type = "button" th:text="'내 차는 버스 ' + ${city.getTodo_2() +' / 10'}"
+                        onclick= "location.href='/information'" >에코백 사용하기 5/10 <img src="/img/incomplate.png" width="25" height="25"></button>
+            </div>
+
+            <div>
+                <button id="activate3" input type = "button" th:text="'탄소 청소기 ' + ${city.getTodo_3() +' / 10'}"
+                        onclick= "location.href='/information'" >냉·난방기 사용 시간 줄이기 7/10 <img src="/img/incomplate.png" width="25" height="25"></button>
+            </div>
+            <div>
+                <button id="activate4" input type = "button" th:text="'아낌왕 전기 ' + ${city.getTodo_4() +' / 10'}"
+                        onclick= "location.href='/information'" >계단 이용하기 3/10 <img src="/img/incomplate.png" width="25" height="25"></button>
+            </div>
+            <div>
+                <button id="activate5" input type = "button" th:text="'내이름 김계단 ' + ${city.getTodo_5() +' / 10'}"
+                        onclick= "location.href='/information'" >분리수거 잘하기 10/10 <img src="/img/complate.png" width="25" height="25"></button>
+            </div>
+            <div>
+                <button id="activate6" input type = "button" th:text="'재활용 왕자 ' + ${city.getTodo_6() +' / 10'}"
+                        onclick= "location.href='/information'" >전기사용시간 줄이기 10/10 <img src="/img/complate.png" width="25" height="25"></button>
+            </div>
+        </div>
+    </div>
+         
+        <footer>
+            <div id="footer_box">
+                <div id="footer_logo">
+                    <img src="/img/logo1.png" width="100" height="100">
+                </div>
+                <div id="address">
+                    <ul>
+                        <li>서울특별시 동작구 상도로 369</li>
+                        <li>TEL:02-820-0114 Email:hnc24@naver.com</li>
+                        <li>Copyright 2021.재욱이와 깨끗한나라.</li>
+                    </ul>
+                </div>
+            </div>            
+        </footer> 
+</body>
+</html>

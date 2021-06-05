@@ -1,0 +1,60 @@
+html {
+    overflow-y: scroll;
+}
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+img{
+    display: block;
+}
+.thyemleaf1{
+    font-size:13px;
+}
+
+.thyemleaf2{
+    font-size:15px;
+}
+
+
+.home_header{
+    box-sizing: content-box;
+    width: 110%;
+    height: 100px;
+}
+
+
+.logo_image{
+    float: left;
+    width: 20%;
+}
+
+
+.home_menu{
+    float: right;
+    width: 70%;
+    margin-top: 10%;
+}
+
+
+
+nav li {
+    display: inline;
+    margin-left: 30px;
+}
+
+nav li a {
+    color: black;
+
+    margin-top:auto;
+    margin-bottom: auto;
+    text-decoration: none;
+}
+
+
+nav{
+    position:relative;
+    left:10px;
+    font-size: 23px;
+}

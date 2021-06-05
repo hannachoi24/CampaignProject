@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/information_header :: information_header"/>
+
+<style>
+    body{
+    font-family: 'Sunflower', sans-serif;
+}
+</style>
+
+
+<body >
+
+    <div id="page" >
+
+
+        <div class="home_header">
+            <div class="logo_image" id="logo">
+                <a href="/">
+                    <img src="/img/logo.png" style="width:300px" alt="Logo">
+                </a>
+            </div>
+            <div class="home_menu">
+                <nav>
+                    <ul class="home_ul">
+                        <!-- about.html 로 이동 -->
+                        <li><a href="/about">About</a></li>
+                        <!-- information.html 로 이동-->
+                        <li><a href="/information">우리동네정보</a></li>
+                        <!-- notice.html 로 이동-->
+                        <li><a href="/notice">NOTICE</a></li>
+
+                        <li> <a class="thyemleaf1" sec:authorize="isAuthenticated()"><span sec:authentication ="name"/>님! 오늘도 동네를위해!</a></li>
+                        <li> <a class="thyemleaf2" sec:authorize="isAnonymous()" th:href="@{/login}">LOGIN</a></li>
+                        <li> <a class="thyemleaf2" sec:authorize="isAnonymous()" th:href="@{/signup}">SIGNUP</a></li>
+                        <li> <a class="thyemleaf2" sec:authorize="isAuthenticated()" th:href="@{/logout}">LOGOUT</a></li>
+
+
+                    </ul>
+                </nav>
+            </div>
+
+
+        </div>
+        <div sec:authorize="isAuthenticated()">
+
+                <hr width="110%">
+
+                    <div class="title" th:object="${city}" >
+                        <div th:if="${city.getTodo_1()}==1">
+                            <a th:text="'우리 동네 타이틀: ' + ${city.getOne()}"></a>
+                        </div>
+                        <div th:if="${city.getTodo_1()}!=1">
+                            <a>우리 동네 타이틀 : 아직 달성 못했네요..ㅠ</a>
+                        </div>
+                    </div>
+
+                <hr width="110%">
+            <div th:object="${user_info}">
+                    <div id="sky">
+                        <img class="sun" src="/img/해.png" width="90px" height="80px" alt="sun">
+                        <img class="cloud1" src="/img/구름1.png" width="100px" height="100px">
+                        <h1>"이번달 환경 지킴이"<br></h1>
+                        <h1 th:text="${user_info.getCityName()}"></h1>
+                        <img class="cloud2"src="/img/구름1.png" width="80px" height="80px" alt="cloud">
+                    </div>
+            </div>
+
+            <hr width="110%">
+                <div class="badge">
+                    <a>오늘의 뱃지</a>
+                </div>
+            <hr width="110%">
+
+                <div class="badge_img" th:object="${city}">
+
+                    <div class="echo_bag1" th:if="${city.getTitle().getBadge_1()}==0">
+                        <p>먹방 꿈나무</p>
+                        <img src="/img/미달성.png" style="max-width: 50px;"  alt="bag">
+                    </div>
+                    <div class="echo_bag1" th:unless="${city.getTitle().getBadge_1()}==0">
+                        <p>먹방 꿈나무</p>
+                        <img src="/img/달성.png" style="max-width: 50px;"  alt="bag">
+                    </div>
+
+                    <div class="echo_bag1" th:if="${city.getTitle().getBadge_2()}==0">
+                        <p>내차는 버스</p>
+                        <img src="/img/미달성.png" style="max-width: 50px;"  alt="bag">
+                    </div>
+                    <div class="echo_bag1" th:unless="${city.getTitle().getBadge_2()}==0">
+                        <p>내차는 버스</p>
+                        <img src="/img/달성.png" style="max-width: 50px;"  alt="bag">
+                    </div>
+
+                    <div class="echo_bag1" th:if="${city.getTitle().getBadge_3()}==0">
+                        <p>탄소 청소기</p>
+                        <img src="/img/미달성.png" style="max-width: 50px;"  alt="bag">
+                    </div>
+                    <div class="echo_bag1" th:unless="${city.getTitle().getBadge_3()}==0">
+                        <p>탄소 청소기</p>
+                        <img src="/img/달성.png" style="max-width: 50px;"  alt="bag">
+                    </div>
+
+
+                    <div class="echo_bag1" th:if="${city.getTitle().getBadge_4()}==0">
+                        <p>아낌왕 전기</p>
+                        <img src="/img/미달성.png" style="max-width: 50px;"  alt="bag">
+                    </div>
+                    <div class="echo_bag1" th:unless="${city.getTitle().getBadge_4()}==0">
+                        <p>아낌왕 전기</p>
+                        <img src="/img/달성.png" style="max-width: 50px;"  alt="bag">
+                    </div>
+
+
+                    <div class="echo_bag1" th:if="${city.getTitle().getBadge_5()}==0">
+                        <p>내이름 김계단</p>
+                        <img src="/img/미달성.png" style="max-width: 50px;"  alt="bag">
+                    </div>
+                    <div class="echo_bag1" th:unless="${city.getTitle().getBadge_5()}==0">
+                        <p>내이름 김계단</p>
+                        <img src="/img/달성.png" style="max-width: 50px;"  alt="bag">
+                    </div>
+
+                    <div class="echo_bag1" th:if="${city.getTitle().getBadge_6()}==0">
+                        <p>재활용 왕자</p>
+                        <img src="/img/미달성.png" style="max-width: 50px;"  alt="bag">
+                    </div>
+                    <div class="echo_bag1" th:unless="${city.getTitle().getBadge_6()}==0">
+                        <p>재활용 왕자</p>
+                        <img src="/img/달성.png" style="max-width: 50px;"  alt="bag">
+                    </div>
+                </div>
+
+        </div>
+
+
+
+    </div>
+
+    <hr width="110%">
+    <div class="title">
+        <p th:text="${user_info.getError()}"/>
+    </div>
+    <hr width="110%">
+</body>
+</html>

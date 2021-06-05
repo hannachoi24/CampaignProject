@@ -1,0 +1,42 @@
+<html xmlns:th="http://thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/result_header :: result_header" />
+
+<style>
+    body{
+        background-color: #C2D9A2;
+        font-family: 'Sunflower', sans-serif;
+    }
+    a{
+        text-decoration-color: none;
+        text-decoration: none;
+        color: white;
+    }
+</style>
+<body>
+
+
+    <div class= "result1_box">
+        <p class="result1"> 음식만 보면 이성을 잃어버리는 "먹방꿈나무형"</p>
+        <p class="content"> 평소에 많은 양의 음식을 먹는 당신! </p> 
+        <p class="content"> 하루 한끼, 일주일에 한끼만이라도 절제해보는 것은 어때요?</p>
+        <div class="recommend">
+            <div class="recommend1">
+                <img class="earth" src="/img/earth.png">
+                <p class="re_text"> 당신에게 추천하는 탄소감축 루틴은 ? </p>
+                <img class="earth" src="/img/earth.png">
+            </div>
+            <div class="recommend2">
+                <p class = "ment1"> 빈그릇 챌린지 </p>
+                <img class ="dish" src="/img/빈그릇.png">
+                <p class = "ment2"> 일상에서 음식을 남기지 않는 것만으로도 지구에게 큰 도움이 될 수 있어요!</p>   
+            </div>
+        </div>
+
+        <hr class="line">
+
+        <div class="atc">
+            <a href= "/"> 메인화면으로 돌아가기 </a>
+        </div> 
+    </div>
+</body>
+</html>

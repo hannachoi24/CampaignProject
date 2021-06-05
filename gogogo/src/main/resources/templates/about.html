@@ -1,0 +1,57 @@
+<html xmlns:th="http://thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head th:replace="fragments/about_header :: about_header">
+
+</head>
+<style>     body{
+    font-family: 'Sunflower', sans-serif;
+}
+.data1_box{
+    align-items: center;
+}
+p{
+    margin: auto;
+}
+</style>
+
+
+
+<body>
+<div id="page">
+    <div class="home_header">
+        <div class="logo_image" id="logo">
+            <a href="/">
+                <img src="/img/logo.png" style="width:300px" alt="Logo">
+            </a>
+        </div>
+        <div class="home_menu">
+            <nav>
+                <ul class="home_ul">
+                    <!-- about.html 로 이동 -->
+                    <li><a href="/about">About</a></li>
+                    <!-- information.html 로 이동-->
+                    <li><a href="/information">우리동네정보</a></li>
+                    <!-- notice.html 로 이동-->
+                    <li><a href="/notice">NOTICE</a></li>
+
+                    <li> <a class="thyemleaf1" sec:authorize="isAuthenticated()"><span sec:authentication ="name"/>님! 오늘도 동네를위해!</a></li>
+                    <li> <a class="thyemleaf2" sec:authorize="isAnonymous()" th:href="@{/login}">LOGIN</a></li>
+                    <li> <a class="thyemleaf2" sec:authorize="isAnonymous()" th:href="@{/signup}">SIGNUP</a></li>
+                    <li> <a class="thyemleaf2" sec:authorize="isAuthenticated()" th:href="@{/logout}">LOGOUT</a></li>
+
+
+                </ul>
+            </nav>
+        </div>
+
+
+    </div>
+
+
+    <div class="data1_box">
+        <p> 나부터 시작해서 우리동네, 우리나라의 탄소를 줄여보세요!</p>
+    </div>
+</div>
+
+</body>
+</html>

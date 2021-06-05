@@ -1,0 +1,117 @@
+html {
+  overflow-y: scroll;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+}
+ul {
+  list-style: none;
+} /* 리스트 앞에 . 같은거 제거*/
+a {
+  text-decoration: none;
+} /* 링크에 밑줄 같은거 제거*/
+
+
+/* 제목영역안에 있는 메인 로고 이미지 위치 지정 */
+
+.title{
+  width: 110%;
+  text-align: center;
+}
+
+.title a {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+body {
+  background-color: #c3edff;
+}
+
+#sky{
+  width: 110%;
+}
+
+#sky .cloud1 {
+  margin-left: 60%;
+}
+
+#sky .cloud2 {
+  margin-left: 30%;
+}
+
+#sky .cloud3 {
+  margin-left: 80%px;
+}
+
+#sky h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.badge{
+  width: 110%;
+  text-align: center;
+}
+
+.badge p {
+  color: black;
+  margin-top: 50px;
+  font-weight: bold;
+}
+
+.badge_img {
+  align-items: center;
+
+
+}
+
+#page {
+  width: 820px;
+  margin: 0px auto;
+}
+
+.echo_bag1{
+  margin-left: 15px;
+  float:left;
+  width: 15%;
+}
+.echo_bag2{
+  float:right;
+  width: 15%;
+}
+* footer {
+  width: 100%; /*헤더와 같은 사이즈*/
+  height: 120px;
+  background-color: skyblue;
+  bottom: 0;
+  left: 0;
+  padding: 15px 0;
+  position: flex;
+}
+
+#footer_box {
+  width: 100%;
+  height: 120px;
+}
+
+#footer_logo img {
+  float: left;
+  margin: 10px;
+  margin-left: 20px;
+}
+
+#footer_box #address {
+  float: left;
+  margin-left: 5px;
+  margin-top: 25px;
+  text-align: justify;
+}
+
+#page {
+  width: 930px;
+  margin: 0px auto;
+}

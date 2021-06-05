@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head th:replace="fragments/login_header :: login_header"/>
+
+<style>
+    .fieldError{
+        border-color: #bd2130;
+    }
+    body{
+        font-family: 'Sunflower', sans-serif;
+         background-color: #C2D9A2;
+    }
+</style>
+
+<body>
+<div class="login_container">
+    <img src="/img/logo1.png" width="500px" >
+    <form action="/login" th:object="${loginForm}" method="post">
+        <h2 class="loginLetter">로그인하고 같이 탄소줄이러 가볼까요?</h2>
+
+        <!-- 해당 코드를 사용하여 csrf토큰을 생성할 수 있다.-->
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+
+        <input type="text" class="userLogin" placeholder="이메일" name="username">
+        <input type="password" class="userLogin" placeholder="비밀번호" name="password">
+        <button id="loginButton" type="submit">로그인</button>
+    </form>
+
+</div>
+<div>
+    <footer class="join_">
+        <p class="join">계정이 없으신가요? <button class="joinBtn" type="button" onclick= "location.href='/signup'" >가입하기</button></p>
+    </footer>
+</div>
+</body>
+</html>
