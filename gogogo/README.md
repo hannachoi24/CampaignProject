@@ -1,5 +1,5 @@
-(https://user-images.githubusercontent.com/66726731/120877372-20063500-c5f1-11eb-9f2c-f18a41469726.png)
-# gogogo![logo]
+[logo](https://user-images.githubusercontent.com/66726731/120877372-20063500-c5f1-11eb-9f2c-f18a41469726.png)
+# gogogo!
 
 # 개요
 
